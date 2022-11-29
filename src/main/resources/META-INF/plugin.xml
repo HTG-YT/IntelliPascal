@@ -1,0 +1,14 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <id>com.github.htgazurex1212.IntelliPascal</id>
+    <name>IntelliPascal</name>
+    <vendor>HTGAzureX1212.</vendor>
+    <description>An IntelliJ Plugin for support of Free Pascal.</description>
+    <version>2022.3-EAP</version>
+
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <fileType name="Pascal" implementationClass="com.github.htgazurex1212.intellipascal.PascalFileType" />
+    </extensions>
+</idea-plugin>
