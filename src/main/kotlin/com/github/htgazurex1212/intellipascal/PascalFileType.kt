@@ -23,20 +23,20 @@ import org.jetbrains.annotations.NotNull
 import javax.swing.Icon
 
 open class PascalFileType protected constructor() : LanguageFileType(PascalLanguage.INSTANCE) {
-    companion object {
-        val INSTANCE = PascalFileType()
+  companion object {
+    val INSTANCE = PascalFileType()
 
-        val UNIT_EXTENSIONS = listOf("pas", "pp")
-    }
+    val UNIT_EXTENSIONS = listOf("pas", "pp")
+  }
 
-    @NotNull
-    override fun getDescription(): String = "Pascal file"
+  @NotNull
+  override fun getDescription(): String = "Pascal file"
 
-    @NotNull
-    override fun getDefaultExtension(): String = "pas"
+  @NotNull
+  override fun getDefaultExtension(): String = "pas"
 
-    override fun getIcon(): Icon? = null
+  override fun getIcon(): Icon? = null
 
-    @NotNull
-    override fun getName(): String = "Pascal"
+  @NotNull
+  override fun getName(): String = "Pascal"
 }

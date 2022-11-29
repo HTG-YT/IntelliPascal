@@ -22,12 +22,12 @@ import com.intellij.lang.Language
 import org.jetbrains.annotations.NotNull
 
 open class PascalLanguage protected constructor() : Language("Pascal") {
-    companion object {
-        val INSTANCE = PascalLanguage()
-    }
+  companion object {
+    val INSTANCE = PascalLanguage()
+  }
 
-    override fun isCaseSensitive(): Boolean = false
+  override fun isCaseSensitive(): Boolean = false
 
-    @NotNull
-    override fun getDisplayName(): String = "Pascal File"
+  @NotNull
+  override fun getDisplayName(): String = "Pascal File"
 }
