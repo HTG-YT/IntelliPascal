@@ -1,11 +1,11 @@
 package com.github.htgazurex1212.intellipascal.pascalSdk
 
-import com.github.htgazurex1212.intellipascal.exception.IntelliPascalException
 import com.github.htgazurex1212.intellipascal.pascalSdk.util.FreePascalSdkUtil
 import com.github.htgazurex1212.intellipascal.util.SystemUtil
 import com.intellij.openapi.diagnostic.Logger
-import com.intellij.openapi.projectRoots.SdkType
+import com.intellij.openapi.projectRoots.*
 import com.intellij.openapi.util.SystemInfo
+import org.jdom.Element
 import org.jetbrains.annotations.NotNull
 import java.io.File
 import org.jetbrains.annotations.Nullable
@@ -15,6 +15,11 @@ class FreePascalSdkType : SdkType("FreePascal SDK") {
     private val LOGGER = Logger.getInstance(FreePascalSdkType::class.java.name)
 
     fun getInstance(): FreePascalSdkType = findInstance(FreePascalSdkType::class.java)
+  }
+
+  @Nullable
+  override fun createAdditionalDataConfigurable(sdkModel: SdkModel, sdkModificator: SdkModificator): AdditionalDataConfigurable? {
+    TODO("Not yet implemented")
   }
 
   @NotNull
@@ -28,11 +33,8 @@ class FreePascalSdkType : SdkType("FreePascal SDK") {
     return fpcBinary.isFile && fpcBinary.canExecute()
   }
 
-  @NotNull
-  override fun suggestSdkName(currentSdkName: String?, sdkHome: String): String {
-    val version = getSdkVersion(sdkHome) ?: return "Free Pascal v?? at $sdkHome"
-
-    return "Free Pascal v$version ${getSdkTarget(sdkHome)}"
+  override fun saveAdditionalData(additionalData: SdkAdditionalData, additional: Element) {
+    return
   }
 
   @Nullable
@@ -44,6 +46,14 @@ class FreePascalSdkType : SdkType("FreePascal SDK") {
     }
 
     return paths.firstOrNull { File(it).isDirectory }
+  }
+
+
+  @NotNull
+  override fun suggestSdkName(currentSdkName: String?, sdkHome: String): String {
+    val version = getSdkVersion(sdkHome) ?: return "Free Pascal v?? at $sdkHome"
+
+    return "Free Pascal v$version ${getSdkTarget(sdkHome)}"
   }
 
   @Nullable
