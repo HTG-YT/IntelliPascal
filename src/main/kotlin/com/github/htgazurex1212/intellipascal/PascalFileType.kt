@@ -20,6 +20,7 @@ package com.github.htgazurex1212.intellipascal
 
 import com.intellij.openapi.fileTypes.LanguageFileType
 import org.jetbrains.annotations.NotNull
+import org.jetbrains.annotations.Nullable
 import javax.swing.Icon
 
 open class PascalFileType protected constructor() : LanguageFileType(PascalLanguage.INSTANCE) {
@@ -35,6 +36,7 @@ open class PascalFileType protected constructor() : LanguageFileType(PascalLangu
   @NotNull
   override fun getDefaultExtension(): String = "pas"
 
+  @Nullable
   override fun getIcon(): Icon? = null
 
   @NotNull

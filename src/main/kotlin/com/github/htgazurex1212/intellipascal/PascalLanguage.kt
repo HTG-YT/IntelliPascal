@@ -26,6 +26,7 @@ open class PascalLanguage protected constructor() : Language("Pascal") {
     val INSTANCE = PascalLanguage()
   }
 
+  @NotNull
   override fun isCaseSensitive(): Boolean = false
 
   @NotNull
