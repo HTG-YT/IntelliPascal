@@ -18,9 +18,8 @@ class FreePascalSdkType : SdkType("FreePascal SDK") {
   }
 
   @Nullable
-  override fun createAdditionalDataConfigurable(sdkModel: SdkModel, sdkModificator: SdkModificator): AdditionalDataConfigurable? {
-    TODO("Not yet implemented")
-  }
+  override fun createAdditionalDataConfigurable(sdkModel: SdkModel, sdkModificator: SdkModificator): AdditionalDataConfigurable
+    = FreePascalSdkConfigurable()
 
   @NotNull
   override fun getPresentableName(): String = "Free Pascal SDK"
